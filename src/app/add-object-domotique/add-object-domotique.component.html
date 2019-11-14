@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h3>Ajout d'un equipement !</h3>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-info btn-md"  style="margin:5px" (click)="hideMe()" >Ajouter un Objet</button>
+    </div>
+  
+  </div>
+  <hr />
+    <div class="col-xs-12" *ngIf="visible">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label>Nom :</label>
+            <input type="text" class="form-control" name="nomDObjet" ngModel >
+          </div>
+          <div class="form-group">
+              <label>Emplacement :</label>
+              <input type="text" class="form-control" name="emplacementDOobjet" ngModel >
+          </div>
+          <div class="form-group">
+              <label>Statut :</label>
+              <select name="statutDObjet" class="form-control" ngModel >
+                <option value="true">allumé</option>
+                <option value="false">etendu</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label>Connecté :</label>
+              <select name="estConnecte" class="form-control" ngModel >
+                <option value="true">oui</option>
+                <option value="false">non</option>
+              </select> 
+          </div>
+          <div class="form-group">
+              <button class="btn btn-info btn-md" type="submit">Ajouter l'objet</button>
+          </div>
+          </form>
+  </div>
+</div>
