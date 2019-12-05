@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
+declare var swal: any;
 
 @Injectable({
   providedIn: 'root'
 })
+
+
+
+
 export class ServiceObjetService {
 
+    public temoin=false;
     objets=
      [
         {
@@ -117,14 +123,26 @@ export class ServiceObjetService {
     statutDObjet: false,
     estConnecte: false
     }
-    
+    if(nomDObjet === "" || emplacementDOobjet ==="" )
+        swal("Tous les champs sont obligatoires!", "", "error");
+    else{
+
     objet.nomDObjet= nomDObjet,
     objet.emplacementDOobjet= emplacementDOobjet,
     objet.statutDObjet= statutDObjet,
     objet.estConnecte= estConnecte;
     objet.id=this.objets[(this.objets.length-1)].id+ 1;
     this.objets.push(objet);
+            
+}
     
+   }
+
+   getobjet(nom)
+   {
+       for(const e of this.objets)
+       if(e.id=nom)
+       return e;
    }
 
 }

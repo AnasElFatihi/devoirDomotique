@@ -1,15 +1,14 @@
-<div class="container">
+
+
   <div class="row">
-    <div class="col-10">
+    <div class="col-12">
       <h3>Ajout d'un equipement !</h3>
     </div>
-    <div class="col-2">
-        <button class="btn btn-info btn-md"  style="margin:5px" (click)="hideMe()" >Ajouter un Objet</button>
-    </div>
+    
   
   </div>
   <hr />
-    <div class="col-xs-12" *ngIf="visible">
+    <div class="col-6 offset-3" >
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
           <div class="form-group">
             <label>Nom :</label>
@@ -38,4 +37,4 @@
           </div>
           </form>
   </div>
-</div>
+

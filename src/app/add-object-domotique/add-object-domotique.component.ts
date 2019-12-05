@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceObjetService } from '../services/service-objet.service';
 import {  NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-object-domotique',
@@ -11,7 +12,7 @@ export class AddObjectDomotiqueComponent implements OnInit {
 
   objet: any;
   visible=false;
-  constructor(private serviceObj: ServiceObjetService) { }
+  constructor(private serviceObj: ServiceObjetService,private router:Router) { }
 
   
   ngOnInit() {
@@ -26,12 +27,8 @@ export class AddObjectDomotiqueComponent implements OnInit {
     const statutDObjet= form.value['statutDObjet'];
     const estConnecte= form.value['estConnecte'];
     this.serviceObj.ajouterO(nomDObjet, emplacementDOobjet, statutDObjet, estConnecte);
-
+    this.router.navigate(['list']);
   }
 
-  hideMe()
-  {
-    this.visible =  this.visible == true ? false : true;
-    return this.visible;
-  }
+ 
 }

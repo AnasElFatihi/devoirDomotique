@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceObjetService } from '../services/service-objet.service';
 
+
+declare var swal: any;
+
 @Component({
   selector: 'app-objet-domotique',
   templateUrl: './objet-domotique.component.html',
@@ -25,27 +28,37 @@ export class ObjetDomotiqueComponent implements OnInit {
 
   afficher()
    {
-      
        return this.objets;
    }
 
    allumer(obj: any)
    {
-    this.serviceObj.allum(obj);
+     if( obj.statutDObjet == true)
+      swal("L'objet est deja connecté!", "", "error");
+      else
+      this.serviceObj.allum(obj);
    }
 
    etteindre(obj: any)
    {
+    if( obj.statutDObjet == false)
+    swal("L'objet est deja deconnecté!", "", "error");
+    else
     this.serviceObj.ettend(obj);
    }
 
    connecter(obj: any)
    {
+    if( obj.estConnecte == true)
+    swal("L'objet est deja connecté!", "", "error");
+    else
     this.serviceObj.connect(obj);
    }
 
    deconnecter(obj: any)
-   {
+   {if( obj.estConnecte == false)
+    swal("L'objet est deja connecté!", "", "error");
+    else
     this.serviceObj.deconnect(obj);
    }
 

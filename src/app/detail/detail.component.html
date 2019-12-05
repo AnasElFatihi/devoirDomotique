@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3> Nom :{{ monobjet.nomDObjet }}</h3>
+      <h3> Emplacement : {{ monobjet.emplacementDOobjet }}</h3>
+      <h3> Statut : {{ monobjet.statutDObjet }}</h3>
+      <h3> connecte ? : {{ monobjet.estConnecte }}</h3>
+    </div>
+    <div class="col">
+        <input type="button" class="btn btn-sm btn-success" style="margin:5px;" value="Allumer" (click)="allumer(monobjet)">
+        <input type="button" value="Etteindre" class="btn btn-danger btn-sm" style="margin:5px;" (click)="etteindre(monobjet)">
+        <input type="button" class="btn btn-sm btn-success"  value="Connecter" style="margin:5px;" (click)="connecte(monobjet)">
+        <input type="button" value="deConnecter" class="btn btn-danger btn-sm" style="margin:5px;" (click)="deconnect(monobjet)">
+    
+    </div>
+  </div>
+</div>
