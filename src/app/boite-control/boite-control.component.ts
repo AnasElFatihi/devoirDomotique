@@ -15,26 +15,9 @@ export class BoiteControlComponent implements OnInit {
   ngOnInit() {
   }
 
-  allumerTout()
-   {
-    this.serviceObj.allumerT();
-   }
+ 
 
-   ettendreTout()
-   {
-    this.serviceObj.ettendreT();
-   }
-
-
-   connecterTout()
-   {
-    this.serviceObj.connecterT();
-   }
-
-   deconnecterTout()
-   {
-    this.serviceObj.deconnecterT();
-   }
+  
    hideMe(){
     this.router.navigate(['add']);
     

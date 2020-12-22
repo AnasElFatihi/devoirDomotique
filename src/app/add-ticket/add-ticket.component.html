@@ -1,0 +1,37 @@
+
+
+  <div class="row">
+    <div class="col-12">
+      <h3>Ajout d'un ticket !</h3>
+    </div>
+    
+  
+  </div>
+  <hr />
+    <div class="col-6 offset-3" >
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label>Nom :</label>
+            <input type="text" class="form-control" name="nomTicket" ngModel >
+          </div>
+          <div class="form-group">
+              <label>Date de debut :</label>
+              <input type="Date" class="form-control" name="dateDebut" ngModel >
+          </div>
+          <div class="form-group">
+              <label>Date  de Fin :</label>
+              <input type="Date" class="form-control" name="dateFin" ngModel >
+          </div>
+          <div class="form-group">
+              <label>etat :</label>
+              <select name="etat" class="form-control" ngModel >
+                <option value="true">oui</option>
+                <option value="false">non</option>
+              </select> 
+          </div>
+          <div class="form-group">
+              <button class="btn btn-info btn-md" type="submit">Ajouter</button>
+          </div>
+          </form>
+  </div>
+

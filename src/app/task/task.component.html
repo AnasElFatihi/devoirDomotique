@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9" >
+        <table class="table table-hover table-bordered table-striped" >
+            <thead class="thead-dark">
+                    <th>Ticket</th>
+                    <th>Date de debut</th>
+                    <th>Date de fin</th>
+                    <th>etat</th>
+                    
+            </thead>
+            <tr *ngFor="let objet of objets">
+                <td> {{objet.nomTicket}} </td>
+                <td>{{objet.dateDebut}}</td>
+                <td>{{objet.dateFin}}</td>
+                <td>{{objet.etat == true ? "Fait" : "Non fait" }}</td>
+                
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-3" style="border-left:2px dashed black;">
+        <app-boite-control></app-boite-control>
+    </div>
+
+</div>
+</div>
+
+           
+        
+
+
+    
+
